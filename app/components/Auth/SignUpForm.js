@@ -52,7 +52,7 @@ export default function SignUpForm() {
           Hi! Welcome
         </Typography>
         <Typography variant="subtitle1" gutterBottom>
-          Let's create an account
+          Let&apos;s create an account
         </Typography>
       </Box>
       <TextField

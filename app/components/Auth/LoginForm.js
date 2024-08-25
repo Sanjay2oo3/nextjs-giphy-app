@@ -18,7 +18,7 @@ export default function LoginForm() {
       toast.success(`Logged in as ${user.email}`);
       router.push('/');
     }
-  }, [user]);
+  }, [user,router]);
 
   const handleLogin = async () => {
     if (!email.trim()) {

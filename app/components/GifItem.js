@@ -17,7 +17,7 @@ const GifItem = ({ gif, onFavoriteChange }) => {
     };
 
     checkFavoriteStatus();
-  }, []);
+  }, [checkIfFavorite]);
 
   const checkIfFavorite = async () => {
     const user = auth.currentUser;
