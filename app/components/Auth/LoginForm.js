@@ -46,12 +46,12 @@ export default function LoginForm() {
   return (
     <Container maxWidth="xs">
       <Box sx={{ textAlign: 'center', mt: 8 }}>
-        <Typography variant="h4" gutterBottom>
-          Hi! Welcome
-        </Typography>
-        <Typography variant="subtitle1" gutterBottom>
-          I'm waiting for you, please enter your detail
-        </Typography>
+      <Typography variant="h4" gutterBottom>
+  Hi! Welcome
+</Typography>
+<Typography variant="subtitle1" gutterBottom>
+  I&apos;m waiting for you, please enter your detail
+</Typography>
       </Box>
       <TextField
         label="Email"
@@ -75,8 +75,8 @@ export default function LoginForm() {
         Forgot Password?
       </Button>
       <Typography variant="body2" align="center" sx={{ mt: 2 }}>
-        Don't have an account? <Button onClick={() => router.push('/auth/signup')}>Sign Up</Button>
-      </Typography>
+  Don&apos;t have an account? <Button onClick={() => router.push('/auth/signup')}>Sign Up</Button>
+</Typography>
       <ToastContainer />
     </Container>
   );
