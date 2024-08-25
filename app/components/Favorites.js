@@ -41,7 +41,7 @@ const Favorites = () => {
     };
 
     fetchFavorites();
-  }, [currentPage]);
+  }, [favorites]);
 
   const getPaginatedFavorites = () => {
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
