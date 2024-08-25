@@ -7,18 +7,6 @@ import { doc, setDoc, getDoc } from 'firebase/firestore';
 const GifItem = ({ gif, onFavoriteChange }) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
-  useEffect(() => {
-    const checkFavoriteStatus = async () => {
-      try {
-        await checkIfFavorite();
-      } catch (error) {
-        console.error('Error checking favorite status:', error);
-      }
-    };
-
-    checkFavoriteStatus();
-  }, [checkIfFavorite]);
-
   const checkIfFavorite = async () => {
     const user = auth.currentUser;
     if (!user) return;
@@ -33,6 +21,18 @@ const GifItem = ({ gif, onFavoriteChange }) => {
       console.error('Error retrieving favorite data:', error);
     }
   };
+
+  useEffect(() => {
+    const checkFavoriteStatus = async () => {
+      try {
+        await checkIfFavorite();
+      } catch (error) {
+        console.error('Error checking favorite status:', error);
+      }
+    };
+
+    checkFavoriteStatus();
+  }, [checkIfFavorite]);
 
   const toggleFavorite = async () => {
     const user = auth.currentUser;
@@ -84,4 +84,3 @@ const GifItem = ({ gif, onFavoriteChange }) => {
 };
 
 export default GifItem;
-

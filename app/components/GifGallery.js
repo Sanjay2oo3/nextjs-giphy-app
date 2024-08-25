@@ -26,7 +26,7 @@ const GifGallery = () => {
       setTotalPages(0);
       setCurrentPage(1);
     }
-  }, [query, currentPage,fetchGifs]);
+  }, [query, currentPage]);
 
   useEffect(() => {
     const savedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];

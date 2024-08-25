@@ -6,7 +6,6 @@ import { useRouter } from 'next/router';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { useRouter } from 'next/router';
 
 
 export default function LoginForm() {

@@ -5,7 +5,6 @@ import { Button, TextField, Box, Typography, Container } from '@mui/material';
 import { useRouter } from 'next/router';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useEffect } from 'react';
 
 export default function SignUpForm() {
   const [name, setName] = useState('');
