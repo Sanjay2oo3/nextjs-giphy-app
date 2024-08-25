@@ -2,12 +2,8 @@ This is a Next.js project bootstrapped with create-next-app.
 Getting Started
 
 First, install the dependencies:
-bash
-Copy code
-nam install
+npm install
 Then, run the development server:
-bash
-Copy code
 npm run dev
 # or
 yarn dev
