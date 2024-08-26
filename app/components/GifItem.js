@@ -7,22 +7,22 @@ import { doc, setDoc, getDoc } from 'firebase/firestore';
 const GifItem = ({ gif, onFavoriteChange }) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
-  const checkIfFavorite = async () => {
-    const user = auth.currentUser;
-    if (!user) return;
-
-    try {
-      const docRef = doc(db, 'favorites', user.uid);
-      const docSnap = await getDoc(docRef);
-      if (docSnap.exists() && docSnap.data().gifs.includes(gif.id)) {
-        setIsFavorite(true);
-      }
-    } catch (error) {
-      console.error('Error retrieving favorite data:', error);
-    }
-  };
-
   useEffect(() => {
+    const checkIfFavorite = async () => {
+      const user = auth.currentUser;
+      if (!user) return;
+
+      try {
+        const docRef = doc(db, 'favorites', user.uid);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists() && docSnap.data().gifs.includes(gif.id)) {
+          setIsFavorite(true);
+        }
+      } catch (error) {
+        console.error('Error retrieving favorite data:', error);
+      }
+    };
+
     const checkFavoriteStatus = async () => {
       try {
         await checkIfFavorite();
@@ -32,8 +32,7 @@ const GifItem = ({ gif, onFavoriteChange }) => {
     };
 
     checkFavoriteStatus();
-  }, [checkIfFavorite]);
-
+  }, [gif.id]); 
   const toggleFavorite = async () => {
     const user = auth.currentUser;
     if (!user) return;
@@ -57,7 +56,7 @@ const GifItem = ({ gif, onFavoriteChange }) => {
       }
       setIsFavorite(!isFavorite);
       if (typeof onFavoriteChange === 'function') {
-        onFavoriteChange(); // Notify parent component
+        onFavoriteChange(); 
       }
     } catch (error) {
       console.error('Error toggling favorite:', error);
@@ -84,3 +83,4 @@ const GifItem = ({ gif, onFavoriteChange }) => {
 };
 
 export default GifItem;
+
